@@ -5,7 +5,7 @@ import { useRef } from 'react';
 const whyUsReasons = [
   {
     title: "Expertise and Experience",
-    description: "With years of experience in the industry, we have a deep understanding of the marketing landscape in India and Dubai. Our team of experts has successfully executed a wide range of marketing campaigns across various industries, making us well-equipped to meet your unique needs."
+    description: "With years of experience in the industry, we have a deep understanding of the marketing landscape in India. Our team of experts has successfully executed a wide range of marketing campaigns across various industries, making us well-equipped to meet your unique needs."
   },
   {
     title: "Creative Excellence",
@@ -74,7 +74,7 @@ export function About() {
               className="space-y-6 text-gray-600 font-sans text-base md:text-lg"
             >
             <p>
-              At OMNIA Creative Agency, we are your one-stop solution for all your marketing needs. With years of expertise and a dedicated team of professionals, we have established ourselves as India's leading marketing agency and have now expanded our services to Dubai, bringing our innovative and creative marketing solutions to the heart of the Middle East.
+              At OMNIA Creative Agency, we are your one-stop solution for all your marketing needs. With years of expertise and a dedicated team of professionals, we have established ourselves as India's leading marketing agency, bringing our innovative and creative marketing solutions to brands across the nation.
             </p>
             <p>
               At OMNIA Creative Agency, we pride ourselves on our creativity, professionalism, and commitment to delivering results. Whether you're looking to boost your brand's visibility, engage your audience, or create a memorable event, we have the expertise and passion to make it happen.
@@ -115,7 +115,7 @@ export function About() {
         </div>
       </section>
 
-      {/* The Crew */}
+    {/* The Founder */}
       <section className="bg-white py-16 lg:py-32 px-6 md:px-12 border-t border-gray-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -125,7 +125,7 @@ export function About() {
               viewport={{ once: true }}
               className="text-3xl md:text-4xl font-heading font-bold text-omnia-black mb-4"
             >
-              The OMNIA Crew
+              The Founder
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -134,7 +134,7 @@ export function About() {
               transition={{ delay: 0.2 }}
               className="text-gray-500 font-sans text-sm uppercase tracking-widest"
             >
-              People Behind OMNIA Creative Agency
+              The Vision Behind OMNIA Creative Agency
             </motion.p>
           </div>
 

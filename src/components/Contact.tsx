@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
+import { FaInstagram, FaPhoneAlt, FaEnvelope, FaLinkedin } from 'react-icons/fa';
 import { ButtonColorful } from './ButtonColorful';
 import BorderGlow from './BorderGlow';
 
@@ -9,7 +10,7 @@ export function Contact() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="contact" className="py-16 lg:py-32 bg-white relative overflow-hidden">
+    <section id="contact" className="py-16 lg:py-32 bg-[#ffffff] relative overflow-hidden">
       {/* Massive Background Text */}
       <div className="absolute top-0 left-0 w-full overflow-hidden pointer-events-none opacity-5 select-none flex justify-center z-0">
         <h2 className="text-[18vw] lg:text-[20vw] font-heading font-black text-omnia-black whitespace-nowrap leading-none tracking-tighter">
@@ -37,23 +38,30 @@ export function Contact() {
 
             <div className="space-y-8">
               <div>
-                <h4 className="text-gray-500 font-sans text-sm uppercase tracking-widest mb-2">Email Us</h4>
-                <a href="mailto:workwithomnia@gmail.com" className="text-xl md:text-2xl font-heading font-bold text-omnia-black hover:text-omnia-red transition-colors break-all">
+                <h4 className="text-omnia-black font-sans text-sm uppercase tracking-widest mb-2 flex items-center gap-2"><FaEnvelope /> Email Us</h4>
+                <a href="mailto:workwithomnia@gmail.com" className="text-xl md:text-2xl font-heading font-bold text-omnia-black hover:text-omnia-red transition-colors flex items-center gap-2 break-all">
                   workwithomnia@gmail.com
                 </a>
               </div>
               
               <div>
-                <h4 className="text-gray-500 font-sans text-sm uppercase tracking-widest mb-2">Call Us</h4>
-                <a href="tel:+918108951419" className="text-xl md:text-2xl font-heading font-bold text-omnia-black hover:text-omnia-red transition-colors block">
+                <h4 className="text-omnia-black font-sans text-sm uppercase tracking-widest mb-2 flex items-center gap-2"><FaPhoneAlt /> Call Us</h4>
+                <a href="tel:+918108951419" className="text-xl md:text-2xl font-heading font-bold text-omnia-black hover:text-omnia-red transition-colors flex items-center gap-2">
                   Contact - +91 81089 51419
                 </a>
               </div>
 
               <div>
-                <h4 className="text-gray-500 font-sans text-sm uppercase tracking-widest mb-2">Follow Us</h4>
-                <a href="https://www.instagram.com/omniaevents_marketing?utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-xl md:text-2xl font-heading font-bold text-omnia-black hover:text-omnia-red transition-colors block">
+                <h4 className="text-omnia-black font-sans text-sm uppercase tracking-widest mb-2 flex items-center gap-2"><FaInstagram /> Follow Us</h4>
+                <a href="https://www.instagram.com/omniaevents_marketing?utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-xl md:text-2xl font-heading font-bold text-omnia-black hover:text-omnia-red transition-colors flex items-center gap-2">
                   @omniaevents_marketing
+                </a>
+              </div>
+
+              <div>
+                <h4 className="text-omnia-black font-sans text-sm uppercase tracking-widest mb-2 flex items-center gap-2"><FaLinkedin /> Connect</h4>
+                <a href="https://www.linkedin.com/company/omnia-events-marketing/" target="_blank" rel="noopener noreferrer" className="text-xl md:text-2xl font-heading font-bold text-omnia-black hover:text-omnia-red transition-colors flex items-center gap-2 break-all">
+                  LinkedIn
                 </a>
               </div>
             </div>
@@ -82,34 +90,34 @@ export function Contact() {
                 <form className="space-y-6" action="https://formspree.io/f/xyklkjnr" method="POST">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-xs font-sans text-gray-600 uppercase tracking-wider">First Name</label>
+                      <label className="text-xs font-sans text-omnia-black uppercase tracking-wider">First Name</label>
                       <input type="text" name="firstName" required className="w-full bg-transparent border-b border-black/20 pb-2 text-omnia-black focus:outline-none focus:border-omnia-red transition-colors font-sans" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-xs font-sans text-gray-600 uppercase tracking-wider">Last Name</label>
+                      <label className="text-xs font-sans text-omnia-black uppercase tracking-wider">Last Name</label>
                       <input type="text" name="lastName" required className="w-full bg-transparent border-b border-black/20 pb-2 text-omnia-black focus:outline-none focus:border-omnia-red transition-colors font-sans" />
                     </div>
                   </div>
                   
                   <div className="space-y-2">
-                    <label className="text-xs font-sans text-gray-600 uppercase tracking-wider">Email Address</label>
+                    <label className="text-xs font-sans text-omnia-black uppercase tracking-wider">Email Address</label>
                     <input type="email" name="email" required className="w-full bg-transparent border-b border-black/20 pb-2 text-omnia-black focus:outline-none focus:border-omnia-red transition-colors font-sans" />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-xs font-sans text-gray-600 uppercase tracking-wider">Company</label>
+                    <label className="text-xs font-sans text-omnia-black uppercase tracking-wider">Company</label>
                     <input type="text" name="company" className="w-full bg-transparent border-b border-black/20 pb-2 text-omnia-black focus:outline-none focus:border-omnia-red transition-colors font-sans" />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-xs font-sans text-gray-600 uppercase tracking-wider">Message</label>
+                    <label className="text-xs font-sans text-omnia-black uppercase tracking-wider">Message</label>
                     <textarea rows={4} name="message" required className="w-full bg-transparent border-b border-black/20 pb-2 text-omnia-black focus:outline-none focus:border-omnia-red transition-colors font-sans resize-none" />
                   </div>
 
                   <div className="mt-8">
                     <ButtonColorful 
                       type="submit"
-                      label="Book a Call Today"
+                      label="Enquire Now"
                       className="w-full"
                     />
                   </div>

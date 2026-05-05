@@ -630,6 +630,10 @@ class App {
   }
 
   update() {
+    if (!this.isDown) {
+      this.scroll.target += this.scrollSpeed * 0.05; // Auto scroll
+    }
+    
     this.scroll.current = lerp(this.scroll.current, this.scroll.target, this.scroll.ease);
     const direction = this.scroll.current > this.scroll.last ? 'right' : 'left';
     if (this.medias) {

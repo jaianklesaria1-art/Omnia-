@@ -9,11 +9,14 @@ const expandedServices = [
     image: 'https://picsum.photos/seed/event/1200/800?blur=2',
     description: 'End-to-end event planning and execution for corporate and public gatherings.',
     items: [
+      'Event Planning & Management',
+      'Social Events',
       'Corporate Events',
-      'Product Launches',
+      'Brand Activation & Promotions',
+      'Trussing & Rigging',
       'Exhibitions & Trade Shows',
-      'Conferences & Seminars',
-      'Live Concerts'
+      'Artist Management',
+      'Audio & Visuals'
     ]
   },
   {
@@ -22,12 +25,14 @@ const expandedServices = [
     image: 'https://picsum.photos/seed/btl/1200/800?blur=2',
     description: 'Targeted, direct marketing activities focused on conversions and direct engagement.',
     items: [
-      'Retail & Mall Activation',
-      'Cab & Auto Branding',
-      'Pole & Transit Branding',
+      'Retail Activation',
+      'Pole Branding',
       'Printing & Fabrication',
       'Corporate Activation',
-      'Newspaper Inserts'
+      'Newspaper Inserts',
+      'Mall Activation',
+      'Cab Branding',
+      'Auto Branding'
     ]
   },
   {
@@ -50,8 +55,10 @@ const expandedServices = [
     description: 'Data-driven digital strategies to maximize your online presence and ROI.',
     items: [
       'Branding & Strategy',
+      'Content Creation',
       'Social Media Marketing',
-      'SEO & SEM',
+      'Logo & Graphic Designing',
+      'Search Engine Optimization',
       'Website & App Development',
       'WhatsApp & Email Marketing',
       'Influencer Marketing'

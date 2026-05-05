@@ -157,13 +157,13 @@ const Masonry: React.FC<MasonryProps> = ({
     };
   }, [items]);
 
-  const grid = useMemo<GridItem[]>(() => {
-    if (!width) return [];
+  const { grid, maxContentHeight } = useMemo(() => {
+    if (!width) return { grid: [], maxContentHeight: 0 };
 
     const colHeights = new Array(columns).fill(0);
     const columnWidth = width / columns;
 
-    return items.map(child => {
+    const grid = items.map(child => {
       const col = colHeights.indexOf(Math.min(...colHeights));
       const x = columnWidth * col;
       const height = child.height / 2;
@@ -173,52 +173,57 @@ const Masonry: React.FC<MasonryProps> = ({
 
       return { ...child, x, y, w: columnWidth, h: height };
     });
+
+    return { grid, maxContentHeight: Math.max(...colHeights) };
   }, [columns, items, width]);
 
   const hasMounted = useRef(false);
 
   useLayoutEffect(() => {
-    if (!imagesReady) return;
+    if (!imagesReady || !containerRef.current) return;
 
-    grid.forEach((item, index) => {
-      const selector = `[data-key="${item.id}"]`;
-      const animationProps = {
-        x: item.x,
-        y: item.y,
-        width: item.w,
-        height: item.h
-      };
-
-      if (!hasMounted.current) {
-        const initialPos = getInitialPosition(item);
-        const initialState = {
-          opacity: 0,
-          x: initialPos.x,
-          y: initialPos.y,
+    const ctx = gsap.context(() => {
+      grid.forEach((item, index) => {
+        const selector = `[data-key="${item.id}"]`;
+        const animationProps = {
+          x: item.x,
+          y: item.y,
           width: item.w,
-          height: item.h,
-          ...(blurToFocus && { filter: 'blur(10px)' })
+          height: item.h
         };
 
-        gsap.fromTo(selector, initialState, {
-          opacity: 1,
-          ...animationProps,
-          ...(blurToFocus && { filter: 'blur(0px)' }),
-          duration: 0.8,
-          ease: 'power3.out',
-          delay: index * stagger
-        });
-      } else {
-        gsap.to(selector, {
-          ...animationProps,
-          duration: duration,
-          ease: ease,
-          overwrite: 'auto'
-        });
-      }
-    });
+        if (!hasMounted.current) {
+          const initialPos = getInitialPosition(item);
+          const initialState = {
+            opacity: 0,
+            x: initialPos.x,
+            y: initialPos.y,
+            width: item.w,
+            height: item.h,
+            ...(blurToFocus && { filter: 'blur(10px)' })
+          };
 
-    hasMounted.current = true;
+          gsap.fromTo(selector, initialState, {
+            opacity: 1,
+            ...animationProps,
+            ...(blurToFocus && { filter: 'blur(0px)' }),
+            duration: 0.8,
+            ease: 'power3.out',
+            delay: index * stagger
+          });
+        } else {
+          gsap.to(selector, {
+            ...animationProps,
+            duration: duration,
+            ease: ease,
+            overwrite: 'auto'
+          });
+        }
+      });
+      hasMounted.current = true;
+    }, containerRef);
+
+    return () => ctx.revert();
   }, [grid, imagesReady, stagger, animateFrom, blurToFocus, duration, ease]);
 
   const handleMouseEnter = (e: React.MouseEvent, item: GridItem) => {
@@ -277,7 +282,7 @@ const Masonry: React.FC<MasonryProps> = ({
   };
 
   return (
-    <div ref={containerRef} className="list relative">
+    <div ref={containerRef} className="list relative" style={{ minHeight: maxContentHeight > 0 ? `${maxContentHeight + 20}px` : 'auto' }}>
       {!imagesReady && (
         <div className="absolute inset-0 z-10 pointer-events-none">
           {grid.map(item => (
@@ -292,7 +297,7 @@ const Masonry: React.FC<MasonryProps> = ({
                 padding: '12px'
               }}
             >
-              <div className="w-full h-full bg-gray-100 animate-pulse rounded-[10px]" />
+              <div className="w-full h-full bg-gray-200 animate-pulse rounded-[10px]" />
             </div>
           ))}
         </div>
@@ -300,11 +305,11 @@ const Masonry: React.FC<MasonryProps> = ({
       
       {activeVideo && (
         <div 
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#ffffff]/90 p-4"
           onClick={() => setActiveVideo(null)}
         >
           <button 
-            className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-[101]"
+            className="absolute top-6 right-6 text-omnia-black/70 hover:text-omnia-black transition-colors z-[101]"
             onClick={() => setActiveVideo(null)}
           >
             <FaTimes size={32} />
@@ -332,7 +337,7 @@ const Masonry: React.FC<MasonryProps> = ({
             onMouseLeave={e => handleMouseLeave(e, item)}
           >
             {item.video ? (
-              <div className="item-img relative overflow-hidden bg-gray-100 flex items-center justify-center rounded-[10px]">
+              <div className="item-img relative overflow-hidden bg-[#ffffff] flex items-center justify-center rounded-[10px]">
                 <video src={item.img} autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover rounded-[10px]" />
                 {colorShiftOnHover && (
                   <div

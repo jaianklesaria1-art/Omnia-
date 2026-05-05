@@ -34,8 +34,8 @@ export function ButtonColorful({
 
             {/* Content */}
             <div className="relative flex items-center justify-center gap-2 z-10">
-                <span className="text-white font-heading tracking-wider uppercase text-sm">{label}</span>
-                <ArrowUpRight className="w-4 h-4 text-white/90" />
+                <span className="text-white font-heading tracking-wider uppercase text-sm font-semibold">{label}</span>
+                <ArrowUpRight className="w-4 h-4 text-white hover:text-white" />
             </div>
         </>
     );

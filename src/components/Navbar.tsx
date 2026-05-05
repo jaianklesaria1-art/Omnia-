@@ -41,7 +41,7 @@ export function Navbar() {
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent',
-        isScrolled ? 'bg-white/90 backdrop-blur-md border-black/10 py-4' : 'bg-transparent py-6'
+        isScrolled ? 'bg-[#ffffff]/90 backdrop-blur-md border-black/10 py-4' : 'bg-transparent py-6'
       )}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -86,7 +86,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: '100vh' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden fixed inset-0 top-[72px] bg-white z-40 flex flex-col px-6 py-12"
+            className="md:hidden fixed inset-0 top-[72px] bg-[#ffffff] z-40 flex flex-col px-6 py-12"
           >
             <nav className="flex flex-col gap-8">
               {navLinks.map((link) => (

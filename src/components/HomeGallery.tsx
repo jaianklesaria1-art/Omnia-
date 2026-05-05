@@ -7,43 +7,31 @@ import { ButtonColorful } from './ButtonColorful';
 
 const galleryItems = [
   {
-    id: "1",
+    id: "home-1",
     img: "https://ik.imagekit.io/jai777/Dharmik/events/FINAL%20REEL%20-%20Trim.mp4",
     url: "/gallery",
     height: 700,
     video: true,
   },
   {
-    id: "2",
-    img: "https://ik.imagekit.io/jai777/Dharmik/events/Eve3.jpeg?tr=w-800,h-1000,c-at_max",
-    url: "/gallery",
-    height: 550,
-  },
-  {
-    id: "3",
+    id: "home-3",
     img: "https://ik.imagekit.io/jai777/Dharmik/events/good%20flippin%20burgers%20pune%20%20-%20Trim.mp4",
     url: "/gallery",
     height: 600,
     video: true,
   },
   {
-    id: "4",
+    id: "home-4",
     img: "https://ik.imagekit.io/jai777/Dharmik/events/dh5.jpeg",
     url: "/gallery",
     height: 700,
   },
   {
-    id: "5",
+    id: "home-5",
     img: "https://ik.imagekit.io/jai777/Dharmik/events/R1%20-%20Trim.mp4",
     url: "/gallery",
     height: 550,
     video: true,
-  },
-  {
-    id: "6",
-    img: "https://ik.imagekit.io/jai777/Dharmik/events/Eve1.jpeg?tr=w-800,h-1000,c-at_max",
-    url: "/gallery",
-    height: 600,
   },
 ];
 
@@ -52,7 +40,7 @@ export function HomeGallery() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="pt-12 pb-16 lg:pt-20 lg:pb-32 bg-white relative overflow-hidden border-t border-black/5">
+    <section className="pt-12 pb-4 lg:pt-20 lg:pb-8 bg-[#ffffff] relative overflow-hidden border-t border-black/5">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="mb-8 md:mb-10 text-center">
           <motion.h2 
@@ -84,7 +72,7 @@ export function HomeGallery() {
           </motion.div>
         </div>
         
-        <div ref={ref} className="h-[1900px] min-[400px]:h-[1050px] sm:h-[750px] lg:h-[650px] 2xl:h-[600px] relative mt-8">
+        <div ref={ref} className="w-full relative mt-8 pb-8">
           <Masonry
             items={galleryItems}
             ease="power3.out"

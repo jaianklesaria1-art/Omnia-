@@ -10,24 +10,44 @@ const previewServices = [
     link: '/services',
     text: 'Events',
     image: 'https://ik.imagekit.io/jai777/Dharmik/events/Eve4.jpeg?updatedAt=1776271831767&tr=w-800',
+    images: [
+      'https://ik.imagekit.io/jai777/Dharmik/events/Eve4.jpeg?updatedAt=1776271831767&tr=w-800',
+      'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20193818.png',
+      'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20193835.png'
+    ],
     subItems: ['Event Planning', 'Corporate Events', 'Brand Activation']
   },
   {
     link: '/services',
     text: 'BTL Services',
-    image: 'https://ik.imagekit.io/jai777/Dharmik/events/Eve3.jpeg?updatedAt=1776271832260&tr=w-800',
+    image: 'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20193926.png',
+    images: [
+      'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20193926.png',
+      'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20193901.png',
+      'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20193901.png'
+    ],
     subItems: ['Retail Activation', 'Mall Activation', 'Cab Branding']
   },
   {
     link: '/services',
     text: 'ATL Services',
-    image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh5.jpeg?updatedAt=1776498402048&tr=w-800',
+    image: 'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20195136.png',
+    images: [
+      'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20195136.png',
+      'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20195145.png',
+      'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20195156.png'
+    ],
     subItems: ['Television Advertising', 'Radio Campaigns', 'Print Media']
   },
   {
     link: '/services',
     text: 'Digital Marketing',
-    image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh1.jpeg?updatedAt=1776498402003&tr=w-800',
+    image: 'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20194033.png',
+    images: [
+      'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20194033.png',
+      'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20194017.png',
+      'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20194044.png'
+    ],
     subItems: ['Branding & Strategy', 'Social Media', 'SEO & SEM']
   }
 ];
@@ -37,7 +57,7 @@ export function HomeServices() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-8 lg:py-12 bg-white relative overflow-hidden border-t border-black/5">
+    <section className="py-8 lg:py-12 bg-[#ffffff] relative overflow-hidden border-t border-black/5">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         <div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
@@ -76,7 +96,7 @@ export function HomeServices() {
           <FlowingMenu 
             items={previewServices}
             speed={15}
-            textColor="#060010"
+            textColor="#0f0f0f"
             bgColor="transparent"
             marqueeBgColor="#E30613"
             marqueeTextColor="#ffffff"

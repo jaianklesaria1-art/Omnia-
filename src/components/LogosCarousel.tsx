@@ -6,11 +6,13 @@ const logos = [
   { name: 'Dosti', url: 'https://ik.imagekit.io/jai777/Dharmik/events/Dosti%20l.png' },
   { name: 'Client 4', url: 'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-18%20103529.png' },
   { name: 'Head', url: 'https://ik.imagekit.io/jai777/Dharmik/events/Head.png' },
+  { name: 'Hamleys', url: 'https://ik.imagekit.io/jai777/Dharmik/events/hamley1.png' },
+  { name: 'Client 7', url: 'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-05-02%20123841.png' },
 ];
 
 export function LogosCarousel() {
   return (
-    <section className="pt-6 pb-12 lg:pt-10 lg:pb-20 bg-white overflow-hidden border-t border-gray-200">
+    <section className="pt-6 pb-12 lg:pt-10 lg:pb-20 bg-[#ffffff] overflow-hidden border-t border-black/20">
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-10 md:mb-12 text-center">
         <h2 className="text-3xl md:text-4xl font-heading font-bold text-omnia-black tracking-tight">
           Clients
@@ -19,8 +21,8 @@ export function LogosCarousel() {
       
       <div className="relative w-full flex items-center">
         {/* Gradient Masks for smooth fade on edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#ffffff] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#ffffff] to-transparent z-10 pointer-events-none" />
         
         <motion.div 
           className="flex whitespace-nowrap items-center"

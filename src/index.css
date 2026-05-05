@@ -33,7 +33,29 @@
   }
 }
 
-/* Hide scrollbar for clean look */
+@layer utilities {
+  .radial-gradient-blue {
+    background-image: radial-gradient(50% 50% at 50% 50%, #4d9eff80 0%, transparent 100%);
+  }
+  .radial-gradient-green {
+    background-image: radial-gradient(50% 50% at 50% 50%, #76ff02 0%, transparent 100%);
+  }
+  .radial-gradient-pink {
+    background-image: radial-gradient(50% 50% at 50% 50%, #a95ffe 0%, transparent 100%);
+  }
+  .radial-gradient-blue-light {
+    background: radial-gradient(50% 50% at 50% 50%, #aed7ff 0%, transparent 100%);
+  }
+  .radial-gradient-pink2 {
+    background: radial-gradient(50% 50% at 50% 50%, #ffa2f0 0%, transparent 100%);
+  }
+  .radial-gradient-purple {
+    background: radial-gradient(50.67% 50.67% at 50% 50%, #e4ceff 0%, transparent 100%);
+  }
+  .bg-brand-gray {
+    background-color: #fbfaf4;
+  }
+}
 ::-webkit-scrollbar {
   width: 8px;
 }

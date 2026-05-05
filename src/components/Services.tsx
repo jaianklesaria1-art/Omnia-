@@ -64,7 +64,7 @@ export function Services() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section id="services" className="py-32 bg-white relative overflow-hidden">
+    <section id="services" className="py-32 bg-[#ffffff] relative overflow-hidden">
       {/* Massive Background Text like Mayvel */}
       <div className="absolute top-0 left-0 w-full overflow-hidden pointer-events-none opacity-5 select-none flex">
         <h2 className="text-[20vw] font-heading font-black text-omnia-black whitespace-nowrap leading-none">
@@ -111,7 +111,7 @@ export function Services() {
                 className="absolute inset-0 w-full h-full object-cover"
               />
             ))}
-            <div className="absolute inset-0 bg-white/60 backdrop-blur-sm" />
+            <div className="absolute inset-0 bg-[#ffffff]/60 backdrop-blur-sm" />
           </div>
 
           {/* List Items */}
@@ -135,8 +135,8 @@ export function Services() {
                   <div className="md:col-span-7">
                     <div className="flex flex-wrap gap-x-6 gap-y-3">
                       {category.items.map((item, i) => (
-                        <span key={i} className="text-gray-600 font-sans text-sm md:text-base flex items-center group-hover:text-omnia-black transition-colors">
-                          <span className="text-omnia-red mr-2 text-xs">■</span>
+                        <span key={i} className="text-omnia-black font-sans text-sm md:text-base flex items-center group-hover:text-omnia-black transition-colors">
+                          <span className="text-omnia-red font-bold mr-2 text-xs">■</span>
                           {item}
                         </span>
                       ))}
@@ -189,7 +189,7 @@ function InnovationSection() {
                 <h4 className="text-xl font-heading font-bold text-omnia-black mb-2 group-hover:text-omnia-red transition-colors">
                   {item.title}
                 </h4>
-                <p className="text-gray-600 font-sans">{item.desc}</p>
+                <p className="text-omnia-black font-sans">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -205,28 +205,28 @@ function InnovationSection() {
           {/* Card 1 */}
           <motion.div 
             whileHover={{ scale: 1.05, zIndex: 30 }}
-            className="absolute top-0 right-0 w-4/5 h-64 bg-gray-50 shadow-2xl overflow-hidden border border-black/10 z-10"
+            className="absolute top-0 right-0 w-4/5 h-64 bg-[#ffffff] shadow-2xl overflow-hidden border border-black/10 z-10"
           >
             <img src="https://picsum.photos/seed/experiential/800/600" alt="Experiential" referrerPolicy="no-referrer" className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" />
-            <div className="absolute bottom-4 left-4 bg-black/80 px-4 py-2 text-white font-heading text-xs uppercase tracking-wider">Experiential Campaign</div>
+            <div className="absolute bottom-4 left-4 bg-[#ffffff]/80 px-4 py-2 text-omnia-black font-heading text-xs uppercase tracking-wider">Experiential Campaign</div>
           </motion.div>
 
           {/* Card 2 */}
           <motion.div 
             whileHover={{ scale: 1.05, zIndex: 30 }}
-            className="absolute top-1/3 left-0 w-4/5 h-64 bg-gray-50 shadow-2xl overflow-hidden border border-black/10 z-20"
+            className="absolute top-1/3 left-0 w-4/5 h-64 bg-[#ffffff] shadow-2xl overflow-hidden border border-black/10 z-20"
           >
             <img src="https://picsum.photos/seed/billboard/800/600" alt="Billboard" referrerPolicy="no-referrer" className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" />
-            <div className="absolute bottom-4 left-4 bg-black/80 px-4 py-2 text-white font-heading text-xs uppercase tracking-wider">Outdoor Activation</div>
+            <div className="absolute bottom-4 left-4 bg-[#ffffff]/80 px-4 py-2 text-omnia-black font-heading text-xs uppercase tracking-wider">Outdoor Activation</div>
           </motion.div>
 
           {/* Card 3 */}
           <motion.div 
             whileHover={{ scale: 1.05, zIndex: 30 }}
-            className="absolute bottom-0 right-10 w-3/4 h-64 bg-gray-50 shadow-2xl overflow-hidden border border-black/10 z-10"
+            className="absolute bottom-0 right-10 w-3/4 h-64 bg-[#ffffff] shadow-2xl overflow-hidden border border-black/10 z-10"
           >
             <img src="https://picsum.photos/seed/immersive/800/600" alt="Immersive Event" referrerPolicy="no-referrer" className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" />
-            <div className="absolute bottom-4 left-4 bg-black/80 px-4 py-2 text-white font-heading text-xs uppercase tracking-wider">Immersive Scene</div>
+            <div className="absolute bottom-4 left-4 bg-[#ffffff]/80 px-4 py-2 text-omnia-black font-heading text-xs uppercase tracking-wider">Immersive Scene</div>
           </motion.div>
         </motion.div>
 

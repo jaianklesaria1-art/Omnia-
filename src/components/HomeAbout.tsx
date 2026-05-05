@@ -9,7 +9,7 @@ export function HomeAbout() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about-preview" className="pt-16 lg:pt-32 pb-10 lg:pb-16 bg-white relative overflow-hidden">
+    <section id="about-preview" className="pt-16 lg:pt-32 pb-10 lg:pb-16 bg-[#ffffff] relative overflow-hidden">
       {/* Decorative background element */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-omnia-red/5 to-transparent pointer-events-none" />
       
@@ -26,10 +26,10 @@ export function HomeAbout() {
               <h2 className="text-sm font-heading text-omnia-red uppercase tracking-[0.3em] mb-4">Who We Are</h2>
               <h3 className="text-3xl md:text-5xl lg:text-5xl font-heading font-black text-omnia-black leading-tight mb-8 uppercase">
                 WE DON'T JUST MARKET.<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-omnia-black to-gray-500">WE MAKE AN IMPACT.</span>
+                <span className="text-omnia-black">WE MAKE AN IMPACT.</span>
               </h3>
               
-              <div className="space-y-6 text-gray-600 font-sans text-base md:text-lg leading-relaxed mb-10">
+              <div className="space-y-6 text-omnia-black font-sans text-base md:text-lg leading-relaxed mb-10">
                 <p>
                   OMNIA is a premium creative agency specializing in marketing, branding, and high-impact activations. We bridge the gap between brands and their audiences through innovative strategies and unforgettable experiences.
                 </p>

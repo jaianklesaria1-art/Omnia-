@@ -13,7 +13,7 @@ export function Stats() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-8 lg:py-12 bg-white relative border-y border-black/5">
+    <section className="py-8 lg:py-12 bg-[#ffffff] relative border-y border-black/5">
       {/* Decorative abstract blob to make the translucency visible */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-full bg-omnia-red/5 blur-3xl rounded-full" />
@@ -22,7 +22,7 @@ export function Stats() {
       <div className="max-w-4xl mx-auto px-6 md:px-12 relative z-10">
         <div 
           ref={ref} 
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 bg-white/60 backdrop-blur-md border border-white/40 shadow-xl shadow-black/5 rounded-3xl py-8 md:py-10 px-6"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 bg-[#ffffff]/60 backdrop-blur-md border border-black/10 shadow-xl shadow-black/5 rounded-3xl py-8 md:py-10 px-6"
         >
           {stats.map((stat, index) => (
             <motion.div
@@ -35,7 +35,7 @@ export function Stats() {
               <h3 className="text-3xl md:text-5xl font-heading font-black text-omnia-black mb-1 drop-shadow-sm">
                 {stat.value}
               </h3>
-              <p className="text-gray-600 font-sans uppercase tracking-[0.2em] text-xs font-semibold">
+              <p className="text-omnia-black font-sans uppercase tracking-[0.2em] text-xs font-semibold">
                 {stat.label}
               </p>
             </motion.div>

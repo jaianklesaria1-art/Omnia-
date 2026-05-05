@@ -1,198 +1,214 @@
-import { useRef, useState } from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { Float, Environment, ContactShadows, MeshDistortMaterial } from '@react-three/drei';
-import * as THREE from 'three';
 import { motion } from 'motion/react';
-import SplitText from './SplitText';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { Float } from '@react-three/drei';
+import React, { Suspense, useRef, useState, Component, ErrorInfo, ReactNode } from 'react';
+import * as THREE from 'three';
 
-function MorphingShape({ position, color, speed, distort, radius }: any) {
+interface ErrorBoundaryProps {
+  children?: ReactNode;
+  fallback: ReactNode;
+}
+
+interface ErrorBoundaryState {
+  hasError: boolean;
+}
+
+class WebGLErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+  public state: ErrorBoundaryState = {
+    hasError: false
+  };
+
+  public static getDerivedStateFromError(_: Error): ErrorBoundaryState {
+    return { hasError: true };
+  }
+
+  public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    console.error("WebGL error caught by boundary:", error, errorInfo);
+  }
+
+  public render() {
+    if (this.state.hasError) {
+      return <>{this.props.fallback}</>;
+    }
+    return <>{this.props.children}</>;
+  }
+}
+
+function InteractiveMesh({ children, position, rotation = [0, 0, 0], scaleOffset = 1.2 }: any) {
   const meshRef = useRef<THREE.Mesh>(null);
   const [hovered, setHovered] = useState(false);
+  const [clicked, setClicked] = useState(false);
 
-  useFrame((state) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x = state.clock.elapsedTime * speed * 0.5;
-      meshRef.current.rotation.y = state.clock.elapsedTime * speed;
-      
-      // Scale and distort more when the user hovers over it
-      const targetScale = hovered ? 1.15 : 1;
-      meshRef.current.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), 0.1);
+  useFrame((state, delta) => {
+    if (!meshRef.current) return;
+    
+    // Scale on hover
+    const targetScale = hovered ? scaleOffset : 1;
+    meshRef.current.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), 0.1);
+
+    // Spin on click
+    if (clicked) {
+      meshRef.current.rotation.y += delta * 10;
+      meshRef.current.rotation.x += delta * 5;
+      if (meshRef.current.rotation.y > Math.PI * 2) {
+        setClicked(false);
+      }
+    } else {
+      // Return to original rotation
+      meshRef.current.rotation.x = THREE.MathUtils.lerp(meshRef.current.rotation.x, rotation[0], 0.05);
+      meshRef.current.rotation.y = THREE.MathUtils.lerp(meshRef.current.rotation.y, rotation[1], 0.05);
+      meshRef.current.rotation.z = THREE.MathUtils.lerp(meshRef.current.rotation.z, rotation[2], 0.05);
     }
   });
 
   return (
-    <Float speed={speed * 2} rotationIntensity={1.5} floatIntensity={2}>
-      <mesh 
-        ref={meshRef} 
-        position={position}
-        onPointerOver={() => setHovered(true)}
-        onPointerOut={() => setHovered(false)}
-      >
-        <sphereGeometry args={[radius, 64, 64]} />
-        <MeshDistortMaterial 
-          color={color} 
-          envMapIntensity={1} 
-          clearcoat={1} 
-          clearcoatRoughness={0.1} 
-          metalness={0.8} 
-          roughness={0.1} 
-          distort={hovered ? distort * 2 : distort} // Increase distortion on hover
-          speed={hovered ? speed * 6 : speed * 3} // Faster wobble on hover
-        />
-      </mesh>
-    </Float>
+    <mesh
+      ref={meshRef}
+      position={position}
+      onPointerOver={() => {
+        setHovered(true);
+        document.body.style.cursor = 'pointer';
+      }}
+      onPointerOut={() => {
+        setHovered(false);
+        document.body.style.cursor = 'auto';
+      }}
+      onClick={() => setClicked(true)}
+    >
+      {children}
+    </mesh>
   );
 }
 
-function AbstractRings({ position, baseScale = 1 }: any) {
-  const meshRef = useRef<THREE.Mesh>(null);
-  const [hovered, setHovered] = useState(false);
-
-  useFrame((state) => {
-    if(meshRef.current) {
-      meshRef.current.rotation.x = state.clock.elapsedTime * 0.2;
-      meshRef.current.rotation.y = state.clock.elapsedTime * 0.3;
-
-      const targetScale = hovered ? 1.8 * baseScale : 1.5 * baseScale;
-      meshRef.current.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), 0.1);
-    }
-  });
-
-  return (
-    <Float speed={1} rotationIntensity={2} floatIntensity={2}>
-      <mesh 
-        ref={meshRef} 
-        position={position} 
-        onPointerOver={() => setHovered(true)}
-        onPointerOut={() => setHovered(false)}
-      >
-        <torusKnotGeometry args={[1, 0.25, 128, 32]} />
-        <meshStandardMaterial 
-          color="#111111" 
-          metalness={0.9} 
-          roughness={0.1} 
-          envMapIntensity={2}
-        />
-      </mesh>
-    </Float>
-  )
-}
-
-function CameraRig() {
-  useFrame((state) => {
-    state.camera.position.lerp(
-      new THREE.Vector3(state.pointer.x * 2, state.pointer.y * 2, 8),
-      0.05
-    );
-    state.camera.lookAt(0, 0, 0);
-  });
-  return null;
-}
-
 function Scene() {
-  const { viewport } = useThree();
-  const isMobile = viewport.width < 5;
+  const [isMobile, setIsMobile] = useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
     <>
-      <CameraRig />
+      <color attach="background" args={["#ffffff"]} />
       <ambientLight intensity={1.2} />
-      <directionalLight position={[10, 10, 5]} intensity={2.5} color="#ffffff" />
-      <directionalLight position={[-10, -10, -5]} intensity={2} color="#E30613" />
-      <spotLight position={[0, 5, 10]} angle={0.4} penumbra={1} intensity={3} color="#E30613" />
+      <directionalLight position={[10, 10, 5]} intensity={3} />
+      <directionalLight position={[-10, 10, -5]} intensity={1.5} />
+      <pointLight position={[-5, 5, 5]} intensity={2} />
+      <pointLight position={[5, -5, 5]} intensity={2} />
       
-      {/* Dynamic Liquid Energy Blob */}
-      <MorphingShape 
-        position={isMobile ? [-1.8, 2.5, -2] : [-5, 1, -2]} 
-        color="#E30613" 
-        speed={0.5} 
-        distort={0.4} 
-        radius={isMobile ? 1.0 : 1.8} 
-      />
-      
-      {/* Architectural Concept Rings */}
-      <AbstractRings 
-        position={isMobile ? [1.5, -3, -4] : [5, -2, -4]} 
-        baseScale={isMobile ? 0.6 : 1}
-      />
-      
-      {/* Secondary Accent Blob */}
-      <MorphingShape 
-        position={isMobile ? [1.5, 4.5, -5] : [2, 4, -5]} 
-        color="#ffffff" 
-        speed={0.7} 
-        distort={0.3} 
-        radius={isMobile ? 0.6 : 0.8} 
-      />
+      <Suspense fallback={null}>
+        {/* Shiny Dark Red Ball */}
+        <Float speed={isMobile ? 1.5 : 2} rotationIntensity={isMobile ? 0.5 : 1} floatIntensity={1} floatingRange={[-0.2, 0.2]}>
+          <InteractiveMesh position={isMobile ? [1.5, 3, -4] : [-4, 1, -2]}>
+            <sphereGeometry args={[isMobile ? 2 : 2.5, 64, 64]} />
+            <meshPhysicalMaterial 
+              color="#cc0000" 
+              roughness={0.1}
+              metalness={0.2}
+              clearcoat={1}
+              clearcoatRoughness={0.1}
+            />
+          </InteractiveMesh>
+         </Float>
 
-      <Environment preset="city" />
-      <ContactShadows position={[0, -5, 0]} opacity={0.3} scale={30} blur={2} far={6} />
+        {/* Black Torus Knot */}
+        <Float speed={isMobile ? 1.5 : 2.5} rotationIntensity={isMobile ? 1 : 1.5} floatIntensity={isMobile ? 1 : 1.5} floatingRange={[-0.3, 0.3]}>
+          <InteractiveMesh position={isMobile ? [-1.5, -4, -2] : [4, -3, 0]}>
+            <torusKnotGeometry args={[isMobile ? 1 : 1.5, isMobile ? 0.3 : 0.5, 128, 32]} />
+            <meshPhysicalMaterial 
+              color="#111111" 
+              roughness={0.1}
+              metalness={0.8}
+              clearcoat={1}
+            />
+          </InteractiveMesh>
+        </Float>
+
+        {/* Silver Sphere (small ball) */}
+        <Float speed={1.5} rotationIntensity={0.5} floatIntensity={1} floatingRange={[-0.2, 0.2]}>
+          <InteractiveMesh position={isMobile ? [0, 6, -3] : [3, 4, -4]} scaleOffset={1.5}>
+            <sphereGeometry args={[isMobile ? 0.8 : 1.2, 64, 64]} />
+            <meshPhysicalMaterial 
+              color={isMobile ? "#ffffff" : "#e0e0e0"} 
+              roughness={isMobile ? 0 : 0.1}
+              metalness={isMobile ? 1 : 0.9}
+              clearcoat={1}
+            />
+          </InteractiveMesh>
+        </Float>
+      </Suspense>
     </>
   );
 }
 
 export function Hero() {
   return (
-    <section id="home" className="relative h-screen w-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-red-50 via-white to-white overflow-hidden flex items-center">
+    <section id="home" className="relative h-screen w-full bg-[#ffffff] overflow-hidden flex items-center">
       {/* 3D Background */}
-      <div className="absolute inset-0 z-0 opacity-100">
-        <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
-          <Scene />
-        </Canvas>
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-auto">
+        <WebGLErrorBoundary fallback={
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200">
+            {/* Fallback pattern if WebGL fails */}
+            <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+          </div>
+        }>
+          <Canvas 
+            camera={{ position: [0, 0, 10], fov: 45 }}
+            gl={{ powerPreference: "high-performance", antialias: false, alpha: false }}
+            dpr={[1, 1.5]}
+            onContextMenu={(e) => e.preventDefault()}
+          >
+            <Scene />
+          </Canvas>
+        </WebGLErrorBoundary>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pointer-events-none">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full h-full pointer-events-none flex flex-col justify-center pt-24 md:pt-32 pb-12">
         <div className="max-w-4xl pointer-events-auto">
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-6xl lg:text-8xl font-heading font-black text-omnia-black leading-[1.05] md:mb-6 mb-4 drop-shadow-sm"
+            className="text-[12vw] md:text-8xl lg:text-9xl font-heading font-black text-omnia-black tracking-tight leading-[0.9] m-0"
           >
-            CREATING <span className="text-transparent bg-clip-text bg-gradient-to-r from-omnia-red to-red-500">MOMENTS.</span><br />
-            CRAFTING BRANDS.
+            CREATING<br/>
+            <span className="text-omnia-red">MOMENTS.</span><br/>
+            CRAFTING<br/>
+            BRANDS.
           </motion.h1>
-          
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mb-10"
+            className="mt-8 text-lg md:text-2xl font-sans text-gray-700 max-w-2xl font-medium"
           >
-            <SplitText
-              text="Innovative thinking for brands built for tomorrow. We engineer unforgettable experiences and performance-driven marketing."
-              className="text-base md:text-xl text-gray-600 font-sans max-w-2xl font-medium"
-              delay={30}
-              duration={1}
-              ease="power3.out"
-              splitType="words"
-              from={{ opacity: 0, y: 20 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0.1}
-              rootMargin="-100px"
-              textAlign="left"
+            Innovative thinking for brands built for tomorrow. We engineer unforgettable experiences and performance-driven marketing.
+          </motion.p>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center justify-center pointer-events-auto">
+          <span className="text-gray-400 text-xs font-bold tracking-widest uppercase mb-4">SCROLL</span>
+          <div className="w-[1px] h-12 bg-gray-300 relative overflow-hidden">
+            <motion.div 
+              className="absolute top-0 left-0 w-full h-full bg-omnia-red origin-top"
+              animate={{ 
+                y: ["-100%", "100%"]
+              }}
+              transition={{ 
+                repeat: Infinity, 
+                duration: 1.5,
+                ease: "linear"
+              }}
             />
-          </motion.div>
+          </div>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
-      >
-        <span className="text-xs uppercase tracking-widest text-gray-400 font-heading">Scroll</span>
-        <div className="w-[1px] h-12 bg-gray-200 relative overflow-hidden">
-          <motion.div 
-            animate={{ y: [0, 48] }}
-            transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
-            className="absolute top-0 left-0 w-full h-1/2 bg-omnia-red"
-          />
-        </div>
-      </motion.div>
     </section>
   );
 }

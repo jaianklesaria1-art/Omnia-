@@ -7,6 +7,7 @@ interface MenuItemData {
   link: string;
   text: string;
   image: string;
+  images?: string[];
   subItems?: string[];
 }
 
@@ -62,6 +63,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
   link,
   text,
   image,
+  images,
   subItems,
   speed,
   textColor,
@@ -176,8 +178,8 @@ const MenuItem: React.FC<MenuItemProps> = ({
           {subItems && (
             <div className="flex flex-wrap gap-x-6 gap-y-2 items-center">
               {subItems.map((item, i) => (
-                <span key={i} className="text-gray-400 font-sans text-sm md:text-base flex items-center font-normal normal-case tracking-normal">
-                  <span className="text-omnia-red mr-2 text-xs">■</span>
+                <span key={i} className="text-omnia-black font-sans text-sm md:text-base flex items-center font-normal normal-case tracking-normal">
+                  <span className="text-omnia-red font-bold mr-2 text-xs">■</span>
                   {item}
                 </span>
               ))}
@@ -188,12 +190,15 @@ const MenuItem: React.FC<MenuItemProps> = ({
       <div className="marquee" ref={marqueeRef} style={{ backgroundColor: marqueeBgColor }}>
         <div className="marquee__inner-wrap">
           <div className="marquee__inner" ref={marqueeInnerRef} aria-hidden="true">
-            {[...Array(repetitions)].map((_, idx) => (
-              <div className="marquee__part" key={idx} style={{ color: marqueeTextColor }}>
-                <span className="tracking-tighter">{text}</span>
-                <div className="marquee__img" style={{ backgroundImage: `url(${image})` }} />
-              </div>
-            ))}
+            {[...Array(repetitions)].map((_, idx) => {
+              const currentImage = images && images.length > 0 ? images[idx % images.length] : image;
+              return (
+                <div className="marquee__part" key={idx} style={{ color: marqueeTextColor }}>
+                  <span className="tracking-tighter">{text}</span>
+                  <div className="marquee__img" style={{ backgroundImage: `url(${currentImage})` }} />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

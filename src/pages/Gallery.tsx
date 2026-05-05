@@ -1,7 +1,49 @@
 import { motion } from 'motion/react';
+import { useState, useEffect } from 'react';
 import CircularGallery from '../components/CircularGallery';
+import Masonry from '../components/Masonry';
+
+const galleryItems = [
+  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh9.jpeg?updatedAt=1776498402099' },
+  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh8.jpeg?updatedAt=1776498402009' },
+  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh7.jpeg?updatedAt=1776498402026' },
+  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh6.jpeg?updatedAt=1776498402026' },
+  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh5.jpeg?updatedAt=1776498402048' },
+  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh4.jpeg?updatedAt=1776498402039' },
+  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh11V.mp4?updatedAt=1776498406658' },
+  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh1.jpeg?updatedAt=1776498402003' },
+  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20195145.png?updatedAt=1777575136275' },
+  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20195136.png?updatedAt=1777575136288' },
+  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20194044.png?updatedAt=1777574472420' },
+  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20193926.png?updatedAt=1777574472421' },
+  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20193914.png?updatedAt=1777574472339' },
+  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20193901.png?updatedAt=1777574472438' },
+  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20193835.png?updatedAt=1777574472382' },
+  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/Eve7.jpeg?updatedAt=1776271832251' },
+  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/Eve5.jpeg?updatedAt=1776271832164' },
+  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/Eve4.jpeg?updatedAt=1776271831767' },
+  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/Eve3.jpeg?updatedAt=1776271832260' },
+  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/Eve2.jpeg?updatedAt=1776271831562' }
+];
+
+const masonryItems = galleryItems.map((item, index) => ({
+  id: index.toString(),
+  img: item.image,
+  url: item.image,
+  height: [300, 450, 400, 350, 500, 300, 400, 350, 450, 550, 300, 400, 450, 350, 400, 300, 500, 450, 350, 400][index % 20],
+  video: item.image.endsWith('.mp4')
+}));
 
 export function Gallery() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <div className="w-full bg-white pt-24 lg:pt-40 min-h-screen relative overflow-hidden flex flex-col">
       {/* Massive Background Text */}
@@ -30,30 +72,37 @@ export function Gallery() {
         </motion.h3>
       </div>
 
-      <div style={{ height: '70vh', minHeight: '500px', position: 'relative', width: '100%', cursor: 'grab' }} className="active:cursor-grabbing flex-grow">
-        <CircularGallery
-          items={[
-            { image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh9.jpeg?updatedAt=1776498402099&tr=w-800' },
-            { image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh8.jpeg?updatedAt=1776498402009&tr=w-800' },
-            { image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh7.jpeg?updatedAt=1776498402026&tr=w-800' },
-            { image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh6.jpeg?updatedAt=1776498402026&tr=w-800' },
-            { image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh5.jpeg?updatedAt=1776498402048&tr=w-800' },
-            { image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh4.jpeg?updatedAt=1776498402039&tr=w-800' },
-            { image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh3.jpeg?updatedAt=1776498402035&tr=w-800' },
-            { image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh2.jpeg?updatedAt=1776498401967&tr=w-800' },
-            { image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh11V.mp4?updatedAt=1776498406658' },
-            { image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh1.jpeg?updatedAt=1776498402003&tr=w-800' },
-            { image: 'https://ik.imagekit.io/jai777/Dharmik/events/Eve7.jpeg?updatedAt=1776271832251&tr=w-800' },
-            { image: 'https://ik.imagekit.io/jai777/Dharmik/events/Eve4.jpeg?updatedAt=1776271831767&tr=w-800' },
-            { image: 'https://ik.imagekit.io/jai777/Dharmik/events/Eve3.jpeg?updatedAt=1776271832260&tr=w-800' },
-            { image: 'https://ik.imagekit.io/jai777/Dharmik/events/DH10.jpeg?updatedAt=1776498403291&tr=w-800' }
-          ]}
-          bend={3}
-          textColor="#000000"
-          borderRadius={0.05}
-          scrollSpeed={2}
-          scrollEase={0.05}
-        />
+      <div className="w-full flex-grow relative flex flex-col items-center">
+        {/* Desktop View */}
+        {!isMobile && (
+          <div className="hidden md:block w-full h-[70vh] min-h-[500px] cursor-grab active:cursor-grabbing">
+            <CircularGallery
+              items={galleryItems}
+              bend={3}
+              textColor="#000000"
+              borderRadius={0.05}
+              scrollSpeed={2}
+              scrollEase={0.05}
+            />
+          </div>
+        )}
+
+        {/* Mobile View */}
+        <div className="block md:hidden w-full px-4 pb-8 relative">
+          {isMobile && (
+            <Masonry
+              items={masonryItems}
+              ease="power3.out"
+              duration={0.6}
+              stagger={0.05}
+              animateFrom="bottom"
+              scaleOnHover
+              hoverScale={0.95}
+              blurToFocus
+              colorShiftOnHover={false}
+            />
+          )}
+        </div>
       </div>
     </div>
   );

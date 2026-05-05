@@ -6,6 +6,7 @@ import { MissionVision } from '../components/MissionVision';
 import { HomeServices } from '../components/HomeServices';
 import { CallToAction } from '../components/CallToAction';
 import { HomeGallery } from '../components/HomeGallery';
+import { TestimonialsSection } from '../components/Testimonials';
 
 export function Home() {
   return (
@@ -17,6 +18,7 @@ export function Home() {
       <HomeServices />
       <CallToAction />
       <HomeGallery />
+      <TestimonialsSection />
       <LogosCarousel />
     </div>
   );
