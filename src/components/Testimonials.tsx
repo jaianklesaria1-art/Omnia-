@@ -11,14 +11,14 @@ const testimonials = [
     testimonial: "Omnia has done a great job with our brochures and marketing creatives. Their designs are thoughtful, visually strong, and aligned with our brand. The team is professional and easy to work with.",
     by: "Mihir Patel",
     title: "Multispace Developers",
-    imgSrc: "https://ik.imagekit.io/jai777/Dharmik/events/Mihir.png"
+    imgSrc: "https://ik.imagekit.io/jai777/Dharmik/events/Mihir11.png"
   },
   {
-    tempId: 1,
-    testimonial: "Omnia has been a dependable partner for our events, delivering seamless execution every time. Their team handles last-minute and urgent requirements with ease and professionalism.",
-    by: "Abhipraya Kaviratna",
-    title: "AVP Marketing, Mayfair Housing",
-    imgSrc: "https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20191910.png"
+    tempId: 3,
+    testimonial: "Omnia does a great job executing live nights at R City Mall, along with smooth artist management.",
+    by: "Aditya Shinde",
+    title: "Marketing Manager, RCity Mall",
+    imgSrc: "https://api.dicebear.com/7.x/notionists/svg?seed=Aditya&backgroundColor=f3f4f6"
   },
   {
     tempId: 2,
@@ -28,11 +28,11 @@ const testimonials = [
     imgSrc: "https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20191856.png"
   },
   {
-    tempId: 3,
-    testimonial: "Omnia does a great job executing live nights at R City Mall, along with smooth artist management.",
-    by: "Aditya Shinde",
-    title: "Marketing Manager, RCity Mall",
-    imgSrc: "https://api.dicebear.com/7.x/notionists/svg?seed=Aditya&backgroundColor=f3f4f6"
+    tempId: 1,
+    testimonial: "Omnia has been a dependable partner for our events, delivering seamless execution every time. Their team handles last-minute and urgent requirements with ease and professionalism.",
+    by: "Abhipraya Kaviratna",
+    title: "AVP Marketing, Mayfair Housing",
+    imgSrc: "https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20191910.png"
   },
   {
     tempId: 4,

@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 interface Footer7Props {
   logo?: {
@@ -87,14 +88,25 @@ export const Footer7 = ({
           <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
             {/* Logo */}
             <div className="flex items-center gap-2 lg:justify-start">
-              <a href={logo.url}>
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  title={logo.title}
-                  className="h-10 object-contain"
-                />
-              </a>
+              {logo.url.startsWith('http') ? (
+                <a href={logo.url}>
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    title={logo.title}
+                    className="h-10 object-contain"
+                  />
+                </a>
+              ) : (
+                <Link to={logo.url} onClick={() => window.scrollTo(0, 0)}>
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    title={logo.title}
+                    className="h-10 object-contain"
+                  />
+                </Link>
+              )}
               {logo.title && <h2 className="text-xl font-semibold">{logo.title}</h2>}
             </div>
             <p className="w-full md:max-w-md text-sm text-gray-500">
@@ -120,7 +132,11 @@ export const Footer7 = ({
                       key={linkIdx}
                       className="font-medium hover:text-omnia-red transition-colors"
                     >
-                      <a href={link.href}>{link.name}</a>
+                      {link.href.startsWith('http') || link.href.startsWith('#') ? (
+                        <a href={link.href}>{link.name}</a>
+                      ) : (
+                        <Link to={link.href} onClick={() => window.scrollTo(0, 0)}>{link.name}</Link>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -133,7 +149,11 @@ export const Footer7 = ({
           <ul className="order-1 flex flex-col gap-2 md:order-2 md:flex-row">
             {legalLinks.map((link, idx) => (
               <li key={idx} className="hover:text-omnia-red transition-colors">
-                <a href={link.href}> {link.name}</a>
+                {link.href.startsWith('http') || link.href.startsWith('#') ? (
+                  <a href={link.href}> {link.name}</a>
+                ) : (
+                  <Link to={link.href} onClick={() => window.scrollTo(0, 0)}> {link.name}</Link>
+                )}
               </li>
             ))}
           </ul>

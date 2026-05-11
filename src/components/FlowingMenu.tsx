@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
+import { Link } from 'react-router-dom';
 
 import './FlowingMenu.css';
 
@@ -166,27 +167,52 @@ const MenuItem: React.FC<MenuItemProps> = ({
 
   return (
     <div className="menu__item" ref={itemRef} style={{ borderColor, borderTop: isFirst ? 'none' : undefined }}>
-      <a
-        className="menu__item-link"
-        href={link}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        style={{ color: textColor }}
-      >
-        <div className="flex flex-col md:flex-row md:items-center justify-between w-full gap-4 md:gap-8">
-          <span className="tracking-tighter">{text}</span>
-          {subItems && (
-            <div className="flex flex-wrap gap-x-6 gap-y-2 items-center">
-              {subItems.map((item, i) => (
-                <span key={i} className="text-omnia-black font-sans text-sm md:text-base flex items-center font-normal normal-case tracking-normal">
-                  <span className="text-omnia-red font-bold mr-2 text-xs">■</span>
-                  {item}
-                </span>
-              ))}
-            </div>
-          )}
-        </div>
-      </a>
+      {link.startsWith('http') || link.startsWith('#') ? (
+        <a
+          className="menu__item-link"
+          href={link}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          style={{ color: textColor }}
+        >
+          <div className="flex flex-col md:flex-row md:items-center justify-between w-full gap-4 md:gap-8">
+            <span className="tracking-tighter">{text}</span>
+            {subItems && (
+              <div className="flex flex-wrap gap-x-6 gap-y-2 items-center">
+                {subItems.map((item, i) => (
+                  <span key={i} className="text-omnia-black font-sans text-sm md:text-base flex items-center font-normal normal-case tracking-normal">
+                    <span className="text-omnia-red font-bold mr-2 text-xs">■</span>
+                    {item}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        </a>
+      ) : (
+        <Link
+          className="menu__item-link"
+          to={link}
+          onClick={() => window.scrollTo(0, 0)}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          style={{ color: textColor }}
+        >
+          <div className="flex flex-col md:flex-row md:items-center justify-between w-full gap-4 md:gap-8">
+            <span className="tracking-tighter">{text}</span>
+            {subItems && (
+              <div className="flex flex-wrap gap-x-6 gap-y-2 items-center">
+                {subItems.map((item, i) => (
+                  <span key={i} className="text-omnia-black font-sans text-sm md:text-base flex items-center font-normal normal-case tracking-normal">
+                    <span className="text-omnia-red font-bold mr-2 text-xs">■</span>
+                    {item}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        </Link>
+      )}
       <div className="marquee" ref={marqueeRef} style={{ backgroundColor: marqueeBgColor }}>
         <div className="marquee__inner-wrap">
           <div className="marquee__inner" ref={marqueeInnerRef} aria-hidden="true">
