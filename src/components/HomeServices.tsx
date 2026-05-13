@@ -9,44 +9,44 @@ const previewServices = [
   {
     link: '/services',
     text: 'Events',
-    image: 'https://ik.imagekit.io/jai777/Dharmik/events/Eve4.jpeg?updatedAt=1776271831767&tr=w-800',
+    image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh6.jpeg',
     images: [
-      'https://ik.imagekit.io/jai777/Dharmik/events/Eve4.jpeg?updatedAt=1776271831767&tr=w-800',
-      'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20193818.png',
-      'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20193835.png'
+      'https://ik.imagekit.io/jai777/Dharmik/events/dh6.jpeg',
+      'https://ik.imagekit.io/jai777/Dharmik/events/dh7.jpeg',
+      'https://ik.imagekit.io/jai777/Dharmik/events/WhatsApp%20Image%202026-05-05%20at%2011.20.11.jpeg'
     ],
     subItems: ['Event Planning', 'Corporate Events', 'Brand Activation']
   },
   {
     link: '/services',
     text: 'BTL Services',
-    image: 'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20193926.png',
+    image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh5.jpeg',
     images: [
-      'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20193926.png',
-      'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20193901.png',
-      'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20193901.png'
+      'https://ik.imagekit.io/jai777/Dharmik/events/dh5.jpeg',
+      'https://ik.imagekit.io/jai777/Dharmik/events/dh6.jpeg',
+      'https://ik.imagekit.io/jai777/Dharmik/events/dh7.jpeg'
     ],
     subItems: ['Retail Activation', 'Mall Activation', 'Cab Branding']
   },
   {
     link: '/services',
     text: 'ATL Services',
-    image: 'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20195136.png',
+    image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh8.jpeg',
     images: [
-      'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20195136.png',
-      'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20195145.png',
-      'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20195156.png'
+      'https://ik.imagekit.io/jai777/Dharmik/events/dh8.jpeg',
+      'https://ik.imagekit.io/jai777/Dharmik/events/dh9.jpeg',
+      'https://ik.imagekit.io/jai777/Dharmik/events/dh4.jpeg'
     ],
     subItems: ['Television Advertising', 'Radio Campaigns', 'Print Media']
   },
   {
     link: '/services',
     text: 'Digital Marketing',
-    image: 'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20194033.png',
+    image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh4.jpeg',
     images: [
-      'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20194033.png',
-      'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20194017.png',
-      'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20194044.png'
+      'https://ik.imagekit.io/jai777/Dharmik/events/dh4.jpeg',
+      'https://ik.imagekit.io/jai777/Dharmik/events/dh5.jpeg',
+      'https://ik.imagekit.io/jai777/Dharmik/events/WhatsApp%20Image%202026-05-05%20at%2011.20.11.jpeg'
     ],
     subItems: ['Branding & Strategy', 'Social Media', 'SEO & SEM']
   }

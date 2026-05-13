@@ -11,18 +11,7 @@ const galleryItems = [
   { image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh5.jpeg?updatedAt=1776498402048' },
   { image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh4.jpeg?updatedAt=1776498402039' },
   { image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh11V.mp4?updatedAt=1776498406658' },
-  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/dh1.jpeg?updatedAt=1776498402003' },
-  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20195145.png?updatedAt=1777575136275' },
-  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20193914.png?updatedAt=1777574472339' },
-  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20193901.png?updatedAt=1777574472438' },
-  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20193835.png?updatedAt=1777574472382' },
-  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/Eve7.jpeg?updatedAt=1776271832251' },
-  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/Eve5.jpeg?updatedAt=1776271832164' },
-  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/Eve4.jpeg?updatedAt=1776271831767' },
-  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/Eve3.jpeg?updatedAt=1776271832260' },
-  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/Eve2.jpeg?updatedAt=1776271831562' },
   { image: 'https://ik.imagekit.io/jai777/Dharmik/events/WhatsApp%20Video%202026-05-05%20at%2011.29.33.mp4' },
-  { image: 'https://ik.imagekit.io/jai777/Dharmik/events/WhatsApp%20Image%202026-05-05%20at%2011.26.34.jpeg' },
   { image: 'https://ik.imagekit.io/jai777/Dharmik/events/WhatsApp%20Image%202026-05-05%20at%2011.20.11.jpeg' }
 ];
 
