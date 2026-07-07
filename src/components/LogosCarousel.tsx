@@ -1,13 +1,13 @@
 import { motion } from 'motion/react';
 
 const logos = [
-  { name: 'GGF Burger', url: 'https://ik.imagekit.io/jai777/Dharmik/events/ggf%20burger.png' },
-  { name: 'Crossword', url: 'https://ik.imagekit.io/jai777/Dharmik/events/Crossword%20.png' },
-  { name: 'Dosti', url: 'https://ik.imagekit.io/jai777/Dharmik/events/Dosti%20l.png' },
-  { name: 'Client 4', url: 'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-18%20103529.png' },
-  { name: 'Head', url: 'https://ik.imagekit.io/jai777/Dharmik/events/Head.png' },
-  { name: 'Hamleys', url: 'https://ik.imagekit.io/jai777/Dharmik/events/hamley1.png' },
-  { name: 'Client 7', url: 'https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-05-02%20123841.png' },
+  { name: 'Multispace Developer', url: 'https://ik.imagekit.io/yz2cyub4s/CLIENTS/Multispace%20developer%20logo.png?updatedAt=1782902511919' },
+  { name: 'Kamla Group', url: 'https://ik.imagekit.io/yz2cyub4s/CLIENTS/Kamla%20Group%20logo.png?updatedAt=1782902511791' },
+  { name: 'Raunak Group', url: 'https://ik.imagekit.io/yz2cyub4s/CLIENTS/Raunak%20group%20logo.png?updatedAt=1782902482319' },
+  { name: 'Dosti Realty', url: 'https://ik.imagekit.io/yz2cyub4s/CLIENTS/DOSTI%20logo.jpg?updatedAt=1782902135625' },
+  { name: 'Mayfair Housing', url: 'https://ik.imagekit.io/yz2cyub4s/CLIENTS/Mayfair%20logo.png?updatedAt=1782902135630' },
+  { name: 'Vascon Group', url: 'https://ik.imagekit.io/yz2cyub4s/CLIENTS/Vascon%20group.jpg?updatedAt=1782902135423' },
+  { name: 'Good Flippin Burgers', url: 'https://ik.imagekit.io/yz2cyub4s/CLIENTS/gfb-logo-new.png?updatedAt=1782902135412' },
 ];
 
 export function LogosCarousel() {

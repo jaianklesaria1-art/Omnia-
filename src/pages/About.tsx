@@ -26,7 +26,7 @@ const whyUsReasons = [
 ];
 
 const teamMembers = [
-  { name: "Dharmik Modi", role: "Founder", image: "https://ik.imagekit.io/jai777/Dharmik/events/dharmik.jpeg" }
+  { name: "Dharmik Modi", role: "Founder", image: "https://ik.imagekit.io/yz2cyub4s/DSC_9976.JPG?updatedAt=1782204686229" }
 ];
 
 export function About() {

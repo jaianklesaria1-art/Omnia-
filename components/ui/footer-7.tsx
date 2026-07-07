@@ -94,7 +94,7 @@ export const Footer7 = ({
                     src={logo.src}
                     alt={logo.alt}
                     title={logo.title}
-                    className="h-10 object-contain"
+                    className="h-14 md:h-16 lg:h-20 object-contain max-w-[200px] md:max-w-[240px]"
                   />
                 </a>
               ) : (
@@ -103,7 +103,7 @@ export const Footer7 = ({
                     src={logo.src}
                     alt={logo.alt}
                     title={logo.title}
-                    className="h-10 object-contain"
+                    className="h-14 md:h-16 lg:h-20 object-contain max-w-[200px] md:max-w-[240px]"
                   />
                 </Link>
               )}

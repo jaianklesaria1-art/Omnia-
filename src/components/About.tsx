@@ -27,13 +27,23 @@ export function About() {
                 <span className="text-omnia-black">WE MAKE AN IMPACT.</span>
               </h3>
               
-              <div className="space-y-6 text-omnia-black font-sans text-base md:text-lg leading-relaxed">
+              <div className="space-y-6 text-omnia-black font-sans text-base md:text-lg leading-relaxed mb-8">
                 <p>
                   OMNIA is a premium creative agency specializing in marketing, branding, and high-impact activations. We bridge the gap between brands and their audiences through innovative strategies and unforgettable experiences.
                 </p>
                 <p>
                   From large-scale corporate events to hyper-targeted digital campaigns, our approach is rooted in creativity, driven by data, and executed with precision.
                 </p>
+              </div>
+
+              <div className="relative h-[300px] md:h-[400px] w-full mt-8">
+                <img 
+                  src="https://ik.imagekit.io/yz2cyub4s/TWF_2104%20(1).JPG?updatedAt=1782204581508" 
+                  alt="Creative Agency" 
+                  className="w-full h-full object-cover rounded-lg shadow-xl"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 border-2 border-omnia-red translate-x-3 translate-y-3 -z-10 rounded-lg" />
               </div>
             </motion.div>
           </div>

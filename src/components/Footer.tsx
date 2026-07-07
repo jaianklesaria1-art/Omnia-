@@ -24,7 +24,7 @@ export function Footer() {
 
   const customLogo = {
     url: "/",
-    src: "https://ik.imagekit.io/jai777/Dharmik/Logo_omnia-removebg-preview%20(1).png",
+    src: "https://ik.imagekit.io/yz2cyub4s/OMNIA%20Log%20JPEG.jpg?updatedAt=1782907978023",
     alt: "OMNIA Creative Agency Logo",
     title: "", // Blank since the logo image has the text
   };

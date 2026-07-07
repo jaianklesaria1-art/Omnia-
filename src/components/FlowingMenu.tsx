@@ -221,7 +221,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
               return (
                 <div className="marquee__part" key={idx} style={{ color: marqueeTextColor }}>
                   <span className="tracking-tighter">{text}</span>
-                  <div className="marquee__img" style={{ backgroundImage: `url(${currentImage})` }} />
+                  <div className="marquee__img" style={{ backgroundImage: `url("${currentImage}")` }} />
                 </div>
               );
             })}

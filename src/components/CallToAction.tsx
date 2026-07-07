@@ -46,7 +46,7 @@ export function CallToAction() {
           >
             <div className="relative w-full max-w-sm aspect-square md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src="https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-05-04%20185612.png" 
+                src="https://ik.imagekit.io/yz2cyub4s/WhatsApp%20Image%202026-07-04%20at%2022.40.21.jpeg" 
                 alt="Confused about your campaign? We can help."
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

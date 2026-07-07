@@ -357,7 +357,7 @@ const Masonry: React.FC<MasonryProps> = ({
                 )}
               </div>
             ) : (
-              <div className="item-img" style={{ backgroundImage: `url(${item.img})` }}>
+              <div className="item-img" style={{ backgroundImage: `url("${item.img}")` }}>
                 {colorShiftOnHover && (
                   <div
                     className="color-overlay"

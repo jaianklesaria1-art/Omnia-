@@ -50,7 +50,7 @@ export function Navbar() {
           to="/"
           className="flex items-center"
         >
-          <img src="https://ik.imagekit.io/jai777/Dharmik/Logo_omnia-removebg-preview%20(1).png" alt="OMNIA Logo" className="h-10 md:h-12 object-contain" referrerPolicy="no-referrer" />
+          <img src="https://ik.imagekit.io/yz2cyub4s/OMNIA%20Log%20JPEG.jpg?updatedAt=1782907978023" alt="OMNIA Logo" className="h-14 md:h-16 lg:h-20 object-contain max-w-[200px] md:max-w-[240px]" referrerPolicy="no-referrer" />
         </Link>
 
         {/* Desktop Nav */}

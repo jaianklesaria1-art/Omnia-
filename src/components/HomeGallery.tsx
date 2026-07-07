@@ -8,30 +8,51 @@ import { ButtonColorful } from './ButtonColorful';
 const galleryItems = [
   {
     id: "home-1",
-    img: "https://ik.imagekit.io/jai777/Dharmik/events/FINAL%20REEL%20-%20Trim.mp4",
+    img: "https://ik.imagekit.io/yz2cyub4s/VideoCapture_20241224-223220.jpg?updatedAt=1782907338617",
     url: "/gallery",
-    height: 700,
-    video: true,
+    height: 600,
+  },
+  {
+    id: "home-2",
+    img: "https://ik.imagekit.io/yz2cyub4s/DSC_9976.JPG?updatedAt=1782204686229",
+    url: "/gallery",
+    height: 480,
   },
   {
     id: "home-3",
-    img: "https://ik.imagekit.io/jai777/Dharmik/events/good%20flippin%20burgers%20pune%20%20-%20Trim.mp4",
+    img: "https://ik.imagekit.io/yz2cyub4s/WhatsApp%20Image%202026-07-01%20at%204.31.10%20PM.jpeg?updatedAt=1782903737186",
     url: "/gallery",
-    height: 600,
-    video: true,
+    height: 650,
   },
   {
     id: "home-4",
-    img: "https://ik.imagekit.io/jai777/Dharmik/events/dh5.jpeg",
+    img: "https://ik.imagekit.io/yz2cyub4s/TWF_2104%20(1).JPG?updatedAt=1782204581508",
     url: "/gallery",
-    height: 700,
+    height: 500,
   },
   {
     id: "home-5",
-    img: "https://ik.imagekit.io/jai777/Dharmik/events/R1%20-%20Trim.mp4",
+    img: "https://ik.imagekit.io/yz2cyub4s/WhatsApp%20Image%202026-07-01%20at%204.22.26%20PM.jpeg?updatedAt=1782903336229",
     url: "/gallery",
     height: 550,
-    video: true,
+  },
+  {
+    id: "home-6",
+    img: "https://ik.imagekit.io/yz2cyub4s/IMG-20240729-WA0066.jpg?updatedAt=1782204339380",
+    url: "/gallery",
+    height: 600,
+  },
+  {
+    id: "home-7",
+    img: "https://ik.imagekit.io/yz2cyub4s/TWF_1896%20(1).JPG?updatedAt=1782204578666",
+    url: "/gallery",
+    height: 500,
+  },
+  {
+    id: "home-8",
+    img: "https://ik.imagekit.io/yz2cyub4s/WhatsApp%20Image%202026-07-01%20at%204.16.41%20PM%20(15).jpeg?updatedAt=1782902903803",
+    url: "/gallery",
+    height: 650,
   },
 ];
 

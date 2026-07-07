@@ -43,20 +43,20 @@ export function HomeAbout() {
           </div>
 
           {/* Right Content - Visual */}
-          <div className="relative hidden lg:block">
+          <div className="relative block w-full mt-10 lg:mt-0">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-[500px] w-full"
+              className="relative h-[400px] md:h-[500px] w-full"
             >
               <img 
-                src="https://ik.imagekit.io/jai777/Dharmik/events/DH10.jpeg?updatedAt=1776498403291&tr=w-800,h-1000,c-at_max" 
+                src="https://ik.imagekit.io/yz2cyub4s/TWF_2104%20(1).JPG?updatedAt=1782204581508" 
                 alt="Creative Agency" 
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full object-cover rounded-lg shadow-xl transition-all duration-700"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 border-2 border-omnia-red translate-x-4 translate-y-4 -z-10" />
+              <div className="absolute inset-0 border-2 border-omnia-red translate-x-4 translate-y-4 -z-10 rounded-lg" />
             </motion.div>
           </div>
 

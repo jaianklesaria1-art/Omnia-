@@ -11,7 +11,7 @@ const testimonials = [
     testimonial: "Omnia has done a great job with our brochures and marketing creatives. Their designs are thoughtful, visually strong, and aligned with our brand. The team is professional and easy to work with.",
     by: "Mihir Patel",
     title: "Multispace Developers",
-    imgSrc: "https://ik.imagekit.io/jai777/Dharmik/events/Mihir11.png"
+    imgSrc: "https://ik.imagekit.io/yz2cyub4s/CLIENTS/mihir-j-patel-768x512-1.jpg?updatedAt=1782902600227"
   },
   {
     tempId: 3,
@@ -25,28 +25,28 @@ const testimonials = [
     testimonial: "Omnia is super quick with their turnaround and still manages to deliver great quality every time.",
     by: "Shrial Shetty",
     title: "Marketing Executive, Mayfair Housing",
-    imgSrc: "https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20191856.png"
+    imgSrc: "https://api.dicebear.com/7.x/notionists/svg?seed=Shrial&backgroundColor=f3f4f6"
   },
   {
     tempId: 1,
     testimonial: "Omnia has been a dependable partner for our events, delivering seamless execution every time. Their team handles last-minute and urgent requirements with ease and professionalism.",
     by: "Abhipraya Kaviratna",
     title: "AVP Marketing, Mayfair Housing",
-    imgSrc: "https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20191910.png"
+    imgSrc: "https://api.dicebear.com/7.x/notionists/svg?seed=Abhipraya&backgroundColor=f3f4f6"
   },
   {
     tempId: 4,
     testimonial: "Love how Omnia turns our store launches and Burger Raves into high-energy experiences with super Innovative and Experiential Marketing & Events.",
     by: "Aman Maheshwari",
     title: "Sr. Brand Marketing Executive, Good Flippin burger",
-    imgSrc: "https://ik.imagekit.io/jai777/Dharmik/events/Screenshot%202026-04-30%20191927.png"
+    imgSrc: "https://ik.imagekit.io/yz2cyub4s/CLIENTS/WhatsApp%20Image%202026-07-01%20at%204.16.41%20PM%20(13).jpeg?updatedAt=1782906300169"
   },
   {
     tempId: 5,
     testimonial: "A reliable team that ensures smooth execution, great service, and proactive client coordination.",
     by: "Eunice Evans",
     title: "Associate Director, GOOD FLIPPIN BURGER",
-    imgSrc: "https://ik.imagekit.io/jai777/Dharmik/events/eunice.jpeg"
+    imgSrc: "https://ik.imagekit.io/yz2cyub4s/CLIENTS/WhatsApp%20Image%202026-07-01%20at%204.16.41%20PM%20(14).jpeg?updatedAt=1782906300175"
   }
 ];
 
