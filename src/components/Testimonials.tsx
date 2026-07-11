@@ -9,42 +9,42 @@ const testimonials = [
   {
     tempId: 0,
     testimonial: "Omnia has done a great job with our brochures and marketing creatives. Their designs are thoughtful, visually strong, and aligned with our brand. The team is professional and easy to work with.",
-    by: "Mihir Patel",
+    by: "Mihir",
     title: "Multispace Developers",
     imgSrc: "https://ik.imagekit.io/yz2cyub4s/CLIENTS/mihir-j-patel-768x512-1.jpg?updatedAt=1782902600227"
   },
   {
     tempId: 3,
     testimonial: "Omnia does a great job executing live nights at R City Mall, along with smooth artist management.",
-    by: "Aditya Shinde",
+    by: "Aditya",
     title: "Marketing Manager, RCity Mall",
     imgSrc: "https://api.dicebear.com/7.x/notionists/svg?seed=Aditya&backgroundColor=f3f4f6"
   },
   {
     tempId: 2,
     testimonial: "Omnia is super quick with their turnaround and still manages to deliver great quality every time.",
-    by: "Shrial Shetty",
+    by: "Shrial",
     title: "Marketing Executive, Mayfair Housing",
-    imgSrc: "https://api.dicebear.com/7.x/notionists/svg?seed=Shrial&backgroundColor=f3f4f6"
+    imgSrc: "https://ik.imagekit.io/yz2cyub4s/CLIENTS/Screenshot%202026-07-11%20212712.png?updatedAt=1783785470765"
   },
   {
     tempId: 1,
     testimonial: "Omnia has been a dependable partner for our events, delivering seamless execution every time. Their team handles last-minute and urgent requirements with ease and professionalism.",
-    by: "Abhipraya Kaviratna",
+    by: "Abhipraya",
     title: "AVP Marketing, Mayfair Housing",
-    imgSrc: "https://api.dicebear.com/7.x/notionists/svg?seed=Abhipraya&backgroundColor=f3f4f6"
+    imgSrc: "https://ik.imagekit.io/yz2cyub4s/CLIENTS/WhatsApp%20Image%202026-07-11%20at%2021.08.18.jpeg"
   },
   {
     tempId: 4,
     testimonial: "Love how Omnia turns our store launches and Burger Raves into high-energy experiences with super Innovative and Experiential Marketing & Events.",
-    by: "Aman Maheshwari",
+    by: "Aman",
     title: "Sr. Brand Marketing Executive, Good Flippin burger",
     imgSrc: "https://ik.imagekit.io/yz2cyub4s/CLIENTS/WhatsApp%20Image%202026-07-01%20at%204.16.41%20PM%20(13).jpeg?updatedAt=1782906300169"
   },
   {
     tempId: 5,
     testimonial: "A reliable team that ensures smooth execution, great service, and proactive client coordination.",
-    by: "Eunice Evans",
+    by: "Eunice",
     title: "Associate Director, GOOD FLIPPIN BURGER",
     imgSrc: "https://ik.imagekit.io/yz2cyub4s/CLIENTS/WhatsApp%20Image%202026-07-01%20at%204.16.41%20PM%20(14).jpeg?updatedAt=1782906300175"
   }
@@ -113,6 +113,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
           src={testimonial.imgSrc}
           alt={`${testimonial.by.split(',')[0]}`}
           className="mb-4 shrink-0 h-14 w-14 rounded-full bg-[#ffffff] object-cover object-top border-2 border-white relative z-10"
+          referrerPolicy="no-referrer"
           style={{
             boxShadow: isCenter ? "3px 3px 0px rgba(0,0,0,0.2)" : "3px 3px 0px #F3F4F6"
           }}

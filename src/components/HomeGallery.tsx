@@ -26,7 +26,7 @@ const galleryItems = [
   },
   {
     id: "home-4",
-    img: "https://ik.imagekit.io/yz2cyub4s/TWF_2104%20(1).JPG?updatedAt=1782204581508",
+    img: "https://ik.imagekit.io/yz2cyub4s/TWF_2104%20(1).JPG?updatedAt=1782204581508&tr=orig-true",
     url: "/gallery",
     height: 500,
   },
@@ -44,7 +44,7 @@ const galleryItems = [
   },
   {
     id: "home-7",
-    img: "https://ik.imagekit.io/yz2cyub4s/TWF_1896%20(1).JPG?updatedAt=1782204578666",
+    img: "https://ik.imagekit.io/yz2cyub4s/TWF_1896%20(1).JPG?updatedAt=1782204578666&tr=orig-true",
     url: "/gallery",
     height: 500,
   },

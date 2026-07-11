@@ -12,9 +12,9 @@ const galleryItems = [
   { image: 'https://ik.imagekit.io/yz2cyub4s/WhatsApp%20Image%202026-07-01%20at%204.16.41%20PM%20(15).jpeg?updatedAt=1782902903803' },
   { image: 'https://ik.imagekit.io/yz2cyub4s/WhatsApp%20Image%202026-07-01%20at%204.16.41%20PM%20(16).jpeg?updatedAt=1782902903743' },
   { image: 'https://ik.imagekit.io/yz2cyub4s/DSC_9976.JPG?updatedAt=1782204686229' },
-  { image: 'https://ik.imagekit.io/yz2cyub4s/TWF_2104%20(1).JPG?updatedAt=1782204581508' },
-  { image: 'https://ik.imagekit.io/yz2cyub4s/TWF_1896%20(1).JPG?updatedAt=1782204578666' },
-  { image: 'https://ik.imagekit.io/yz2cyub4s/TWF_2193.JPG?updatedAt=1782204578570' },
+  { image: 'https://ik.imagekit.io/yz2cyub4s/TWF_2104%20(1).JPG?updatedAt=1782204581508&tr=orig-true' },
+  { image: 'https://ik.imagekit.io/yz2cyub4s/TWF_1896%20(1).JPG?updatedAt=1782204578666&tr=orig-true' },
+  { image: 'https://ik.imagekit.io/yz2cyub4s/TWF_2193.JPG?updatedAt=1782204578570&tr=orig-true' },
   { image: 'https://ik.imagekit.io/yz2cyub4s/IMG-20240729-WA0066.jpg?updatedAt=1782204339380' }
 ];
 

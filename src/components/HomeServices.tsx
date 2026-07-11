@@ -9,44 +9,44 @@ const previewServices = [
   {
     link: '/services',
     text: 'Events',
-    image: 'https://ik.imagekit.io/yz2cyub4s/DSC_9976.JPG?updatedAt=1782204686229',
+    image: 'https://ik.imagekit.io/yz2cyub4s/SERVICES/WhatsApp%20Image%202026-07-01%20at%204.16.41%20PM.jpeg?updatedAt=1782902864394',
     images: [
-      'https://ik.imagekit.io/yz2cyub4s/DSC_9976.JPG?updatedAt=1782204686229',
-      'https://ik.imagekit.io/yz2cyub4s/TWF_2104%20(1).JPG?updatedAt=1782204581508',
-      'https://ik.imagekit.io/yz2cyub4s/TWF_1896%20(1).JPG?updatedAt=1782204578666'
+      'https://ik.imagekit.io/yz2cyub4s/SERVICES/WhatsApp%20Image%202026-07-01%20at%204.16.41%20PM.jpeg?updatedAt=1782902864394',
+      'https://ik.imagekit.io/yz2cyub4s/SERVICES/m-s-round-truss.jpg?updatedAt=1782902705388',
+      'https://ik.imagekit.io/yz2cyub4s/SERVICES/1746782475_f4af5814b95e5df25de4.jpeg?updatedAt=1782902705352'
     ],
     subItems: ['Event Planning', 'Corporate Events', 'Brand Activation']
   },
   {
     link: '/services',
     text: 'BTL Services',
-    image: 'https://ik.imagekit.io/yz2cyub4s/WhatsApp%20Image%202026-07-01%20at%204.31.10%20PM.jpeg?updatedAt=1782903737186',
+    image: 'https://ik.imagekit.io/yz2cyub4s/SERVICES/WhatsApp%20Image%202026-07-01%20at%204.16.41%20PM%20(4).jpeg?updatedAt=1782902863770',
     images: [
-      'https://ik.imagekit.io/yz2cyub4s/WhatsApp%20Image%202026-07-01%20at%204.31.10%20PM.jpeg?updatedAt=1782903737186',
-      'https://ik.imagekit.io/yz2cyub4s/WhatsApp%20Image%202026-07-01%20at%204.31.11%20PM%20(1).jpeg?updatedAt=1782903737137',
-      'https://ik.imagekit.io/yz2cyub4s/WhatsApp%20Image%202026-07-01%20at%204.22.26%20PM.jpeg?updatedAt=1782903336229'
+      'https://ik.imagekit.io/yz2cyub4s/SERVICES/WhatsApp%20Image%202026-07-01%20at%204.16.41%20PM%20(4).jpeg?updatedAt=1782902863770',
+      'https://ik.imagekit.io/yz2cyub4s/SERVICES/WhatsApp%20Image%202026-07-01%20at%204.16.41%20PM%20(5).jpeg?updatedAt=1782902863782',
+      'https://ik.imagekit.io/yz2cyub4s/SERVICES/WhatsApp%20Image%202026-07-01%20at%204.16.41%20PM%20(2).jpeg?updatedAt=1782902863773'
     ],
     subItems: ['Retail Activation', 'Mall Activation', 'Cab Branding']
   },
   {
     link: '/services',
     text: 'ATL Services',
-    image: 'https://ik.imagekit.io/yz2cyub4s/VideoCapture_20241224-223220.jpg?updatedAt=1782907338617',
+    image: 'https://ik.imagekit.io/yz2cyub4s/SERVICES/M4G_Thumbnail_1000x600_knorr-x-squidd-games.jpg?updatedAt=1782902705390',
     images: [
-      'https://ik.imagekit.io/yz2cyub4s/VideoCapture_20241224-223220.jpg?updatedAt=1782907338617',
-      'https://ik.imagekit.io/yz2cyub4s/IMG-20240729-WA0066.jpg?updatedAt=1782204339380',
-      'https://ik.imagekit.io/yz2cyub4s/TWF_2193.JPG?updatedAt=1782204578570'
+      'https://ik.imagekit.io/yz2cyub4s/SERVICES/M4G_Thumbnail_1000x600_knorr-x-squidd-games.jpg?updatedAt=1782902705390',
+      'https://ik.imagekit.io/yz2cyub4s/SERVICES/1_V8pFvJpw7KRAJ3QNWKx9KA.jpg?updatedAt=1782902705335',
+      'https://ik.imagekit.io/yz2cyub4s/SERVICES/WhatsApp%20Image%202026-07-01%20at%204.16.41%20PM%20(9).jpeg?updatedAt=1782902864174'
     ],
     subItems: ['Television Advertising', 'Radio Campaigns', 'Print Media']
   },
   {
     link: '/services',
     text: 'Digital Marketing',
-    image: 'https://ik.imagekit.io/yz2cyub4s/WhatsApp%20Image%202026-07-01%20at%204.16.41%20PM%20(15).jpeg?updatedAt=1782902903803',
+    image: 'https://ik.imagekit.io/yz2cyub4s/SERVICES/WhatsApp%20Image%202026-07-01%20at%204.16.41%20PM%20(11).jpeg?updatedAt=1782902864252',
     images: [
-      'https://ik.imagekit.io/yz2cyub4s/WhatsApp%20Image%202026-07-01%20at%204.16.41%20PM%20(15).jpeg?updatedAt=1782902903803',
-      'https://ik.imagekit.io/yz2cyub4s/WhatsApp%20Image%202026-07-01%20at%204.16.41%20PM%20(16).jpeg?updatedAt=1782902903743',
-      'https://ik.imagekit.io/yz2cyub4s/WhatsApp%20Image%202026-07-01%20at%204.22.26%20PM%20(1).jpeg?updatedAt=1782903336109'
+      'https://ik.imagekit.io/yz2cyub4s/SERVICES/WhatsApp%20Image%202026-07-01%20at%204.16.41%20PM%20(11).jpeg?updatedAt=1782902864252',
+      'https://ik.imagekit.io/yz2cyub4s/SERVICES/WhatsApp%20Image%202026-07-01%20at%204.16.41%20PM%20(12).jpeg?updatedAt=1782902864375',
+      'https://ik.imagekit.io/yz2cyub4s/SERVICES/WhatsApp%20Image%202026-07-01%20at%204.16.41%20PM%20(10).jpeg?updatedAt=1782902864257'
     ],
     subItems: ['Branding & Strategy', 'Social Media', 'SEO & SEM']
   }

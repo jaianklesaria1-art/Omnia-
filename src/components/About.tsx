@@ -38,7 +38,7 @@ export function About() {
 
               <div className="relative h-[300px] md:h-[400px] w-full mt-8">
                 <img 
-                  src="https://ik.imagekit.io/yz2cyub4s/TWF_2104%20(1).JPG?updatedAt=1782204581508" 
+                  src="https://ik.imagekit.io/yz2cyub4s/TWF_2104%20(1).JPG?updatedAt=1782204581508&tr=orig-true" 
                   alt="Creative Agency" 
                   className="w-full h-full object-cover rounded-lg shadow-xl"
                   referrerPolicy="no-referrer"

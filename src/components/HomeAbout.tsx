@@ -51,7 +51,7 @@ export function HomeAbout() {
               className="relative h-[400px] md:h-[500px] w-full"
             >
               <img 
-                src="https://ik.imagekit.io/yz2cyub4s/TWF_2104%20(1).JPG?updatedAt=1782204581508" 
+                src="https://ik.imagekit.io/yz2cyub4s/TWF_2104%20(1).JPG?updatedAt=1782204581508&tr=orig-true" 
                 alt="Creative Agency" 
                 className="w-full h-full object-cover rounded-lg shadow-xl transition-all duration-700"
                 referrerPolicy="no-referrer"
